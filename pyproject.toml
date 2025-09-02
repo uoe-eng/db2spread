@@ -1,0 +1,32 @@
+[build-system]
+requires = [
+    "hatchling",
+    "versioningit"
+]
+build-backend = "hatchling.build"
+
+[project]
+name = "db2spread"
+dynamic = ["version"]
+dependencies = [
+  "psycopg2",
+  "sqlalchemy<=2.0",
+  "openpyxl",
+  "testing.postgresql",
+]
+authors = [
+  { name="Colin Higgs", email="colin.higgs@ed.ac.uk" },
+]
+description = "Read from a database and output a spreadsheet."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[tool]
+hatch.metadata.allow-direct-references=true
+
+[tool.hatch.version]
+source = "versioningit"
